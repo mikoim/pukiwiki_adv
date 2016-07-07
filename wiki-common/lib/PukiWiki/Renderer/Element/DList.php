@@ -26,8 +26,8 @@ class DList extends ListContainer
 	public function __construct($out)
 	{
 		parent::__construct('dl', 'dt', ':', $out[0]);
-		$element = new ListElement($this->level, 'dd');
-		$this->last = Element::insert($element);
+		$list_element = new ListElement($this->level, 'dd');
+		$this->last = Element::insert($list_element);
 		if ( !empty($out[1]) )
 			$this->last = $this->last->insert(ElementFactory::factory('InlineElement', null, $out[1]));
 	}
