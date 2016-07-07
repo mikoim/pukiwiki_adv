@@ -100,7 +100,8 @@ class RootElement extends Element
 
 			// Horizontal Rule
 			if (substr($line, 0, 4) == '----') {
-				$this->insert(new HRule($this, $line));
+				$hrule = new HRule($this, $line);
+				$this->insert($hrule);
 				continue;
 			}
 
@@ -131,7 +132,8 @@ class RootElement extends Element
 
 			// Pre
 			if ($head === ' ' || $head === "\t") {
-				$this->last = $this->last->add(new Pre($this, $line));
+				$pre = new Pre($this, $line);
+				$this->last = $this->last->add($pre);
 				continue;
 			}
 
